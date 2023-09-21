@@ -4,14 +4,6 @@ This project is aimed at building an application that can help people collaborat
 
 Find the schema for each table in the .sql files
 
-# Here is a quick demo of the system
-
-<a href="https://www.youtube.com/watch?v=kKuESN2CIXw" target="_blank"><img src="https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/thumbnail.png" 
-alt="View Demo Here" width="240" height="180" border="10" /></a>
-
-Click on the image to view demo on youtube
-
-
 
 ## Table of Contents
 
@@ -37,14 +29,17 @@ Click on the image to view demo on youtube
 <a id='assumptions'></a>
 ## Assumptions
   
-Below are few assumptions that I made in constructing the functionality of the system.
-  
-1) I do not want to store the first name and last name of the user, assuming display name is more than enough and not many would be keen on revealing identity.
-2) Subtopic_id  is global ID for a subtopic throughout the system.
-3) There could be the same subtopic name associated with 2 different subtopic_ids .For example programming can a subtopic in the parent topic algorithms and also a subtopic in the parent topic Java with different subtopic_id
-4) Each subtopic_id is associated with a parent_topic and the parent_topic_name is unique
-  
-Incase none of these assumptions make sense right now, nothing to worry, a short description of the entire system is described below and therefore it'll be a lot more clear after going through that part.
+Here are a few assumptions I've considered while designing the system's functionality:
+
+1) Storing only the display name instead of the first name and last name to prioritize user privacy and minimize the need for revealing identity.
+
+2) Assigning global IDs (subtopic_id) to subtopics across the system for unique identification.
+
+3) Allowing the same subtopic name to be associated with different subtopic_ids, such as "programming" being a subtopic under both "algorithms" and "Java" with distinct subtopic_ids.
+
+4) Ensuring that each subtopic_id is linked to a parent_topic, and that parent_topic_names are unique.
+
+If any of these assumptions seem unclear at the moment, don't worry. A concise overview of the entire system is provided below, which should provide further clarity once reviewed.
   
 <a id='schema'></a>
 ## Relational Schema
@@ -349,16 +344,8 @@ I have made sure to make use of the **htmlspecialchars()** function https://www.
 	
 3) I am also looking forward to hosting the website online so that it can get realtime suggestions from the users themselves.
 	
-<a id='contact'></a>
-## Contact Me
 
-  Please feel free to contact me for anything in pertinance to the project. 
-  
-| Contact Method |  |
-| --- | --- |
-| Personal Email | rahulvasan30@gmail.com |
-| School Email |   rs7671@nyu.edu |
-| LinkedIn | https://www.linkedin.com/in/rahul-vasan/ |  	
+
 	
 	
 	
