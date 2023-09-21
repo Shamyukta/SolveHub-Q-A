@@ -95,11 +95,7 @@ If any of these assumptions seem unclear at the moment, don't worry. A concise o
 **1) User Signup module:**
 
 The user signs up to the service. The users table stores the unique display_name, passcode, email address and country as they are required fields. So we only ask the users to enter the required fields. The passcodes are MD5 hashed and stored into the database. He may also have a short description about himself stored under about_me of type longtext, and also enter his state and city, and all these can entered after signing up and logging into the system using the edit profile option in the homepage. Only users signed up for the system can access all the modules of the system. Once the credentials entered during signup is verified the user is asked to log in or if there are any errors the user is prompted with what needs to be corrected. A password mismatch, invalid email format are alerted to the user.
-  
-**Screenshot**
-  
-<p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/usersignup.png" width = 700><p>
-  
+
 **Associated Query**
   
 <p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/usersignupcode.png" width = 700><p>  
@@ -112,10 +108,6 @@ The user logs into the system with his unique display_name, passcode.The MD5 pas
 
 This option is provided to the user once he has logged into the system and can be found on the navigation bar of the homepage. All his existing data will be present on the text area and all text areas will be editable. On clicking the submit button the update will happen. 
 
-**Screenshot**
-  
-<p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/editprofile.png" width = 700><p>
-  
 **Associated Query**
   
 <p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/updateprofilequery.png" width = 700><p>
@@ -123,11 +115,7 @@ This option is provided to the user once he has logged into the system and can b
 **4) Add a new question and tag the questions with relevant topics**
   
 The ask a question on the homepage allows user to ask their question. They need to enter the title and body of the question, and will be alerted if either of them is empty. He also may want to tag his questions with one or more predefined set of topics in the system.Once a question is added, it gets displayed on the homepage immediately for him and other user to view and answer. Adding a questions, shows them under the User’s my questions tab.It also updates the user points by 1 for each question asked. 
-  
-**Screenshot**
-  
-<p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/addandtagquestion.png" width = 700><p>
-  
+
 **Associated Query**
   
 <p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/addandtagquestionquery.png" width = 700><p>
@@ -135,11 +123,7 @@ The ask a question on the homepage allows user to ask their question. They need 
 **5) View all questions added by me**
   
 This is also another option provided to logged in user as part of the navigation bar to view only the questions posted by him with latest questions first. A simple select query on question table to get all questions posted by logged in user which can be found in the session variable would do this.
-  
-**Screenshot**
-  
-<p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/myquestions.png" width = 700><p>
-  
+
 **Associated Query**
   
 <p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/myquestionsquery.png" width = 700><p>
@@ -148,10 +132,6 @@ This is also another option provided to logged in user as part of the navigation
   
 This is also another option provided to logged in user as part of the navigation bar to view only the answers posted by him. However the questions for which he answered are displayed, and clicking on that will lead him to the next page, where he can see the question title, body, all other answers along with his. He will be able to edit his answer text from here.
 
-**Screenshot**
-  
-<p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/myanswers.png" width = 700><p>
-  
 **Associated Query**
   
 <p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/myanswersquery.png" width = 700><p>
@@ -161,10 +141,6 @@ This is also another option provided to logged in user as part of the navigation
 **7.1) For any question in the system:**
 	
 So on the homepage all the questions of the system are added in reverse chronological order.
-
-**Screenshot:**
-	
-<p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/homepage.png" width = 700><p>
 
 A logged in user can view all of these questions. But certain features provided to a user are restricted to only the questions added by him. So for all questions of system the generic ability of the user will be to: 
 
@@ -270,10 +246,6 @@ The user level is displayed on the top left of the navigation bar
 	
 User can also Search for a question or answer from all the pages.
 	
-**Screenshot:**
-	
-<p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/search.png" width = 700><p>
-	
 <a id='search'></a>
 	
 ## Customized Search Algorithm
@@ -305,10 +277,6 @@ Finally since each question can have multiple answers we group by question_id an
 This is the final result ordered by overall_ranking. And this is were the penalization of answer relevance comes in handy.
 
 My search query was “How to store data into a database schema” but if had not penalized the answer_relevance question id 56 would have been the top result of this search and its question is based on how to store the images of 5 cats(Nothing related to databases). Just because one its answers has 10 “database” keyword repeated, it would have become the top result. This will not happen when the search query has quite a good amount of keywords in it. But for small search strings this problem could occur and penalization of answer_relevance can increase the accuracy drastically.
-	
-**Screenshot:**
-	
-<p align="center"><img src = "https://github.com/Rahul-Vasan/Eureka-QNA-Application/blob/main/img/search4.png" width = 700><p>
 	
 **Search Results Page:**
 	
